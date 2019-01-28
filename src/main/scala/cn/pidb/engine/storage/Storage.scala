@@ -1,11 +1,11 @@
-package cn.pidb.storage.blobstorage
+package cn.pidb.engine.storage
 
 import java.io._
 
 import cn.pidb.blob._
 import cn.pidb.blob.storage.BlobStorage
-import cn.pidb.storage.buffer.Buffer
-import cn.pidb.storage.util.{FileUtils, HBaseUtils}
+import cn.pidb.engine.buffer.Buffer
+import cn.pidb.engine.util.{FileUtils, HBaseUtils}
 import cn.pidb.util.ConfigEx._
 import cn.pidb.util.StreamUtils._
 import cn.pidb.util.{Config, Logging}

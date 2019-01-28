@@ -1,12 +1,12 @@
-package cn.pidb.storage.buffer
+package cn.pidb.engine.buffer
 
 import java.io.File
 import java.util.concurrent._
 
 import cn.pidb.blob.BlobIdFactory
 import cn.pidb.blob.storage.Closable
-import cn.pidb.storage.blobstorage.{Bufferable, Storage}
-import cn.pidb.storage.buffer.exception.NotBindingException
+import cn.pidb.engine.storage.{Bufferable, Storage}
+import cn.pidb.engine.buffer.exception.NotBindingException
 import cn.pidb.util.Config
 import cn.pidb.util.ConfigEx._
 

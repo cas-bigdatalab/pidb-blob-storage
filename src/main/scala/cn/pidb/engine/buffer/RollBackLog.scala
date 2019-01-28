@@ -1,8 +1,8 @@
-package cn.pidb.storage.buffer
+package cn.pidb.engine.buffer
 
 import java.io.{BufferedReader, File, FileReader, FileWriter}
 
-import cn.pidb.storage.buffer.exception.FilePathIsDirectoryException
+import cn.pidb.engine.buffer.exception.FilePathIsDirectoryException
 
 class RollBackLogReader (filePath : File) extends Iterator[String]{
   if (filePath.isDirectory) throw new FilePathIsDirectoryException(s"The file path ${filePath.getPath} is a directory")

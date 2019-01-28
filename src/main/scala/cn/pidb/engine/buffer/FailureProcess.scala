@@ -1,6 +1,6 @@
-package cn.pidb.storage.buffer
+package cn.pidb.engine.buffer
 
-import cn.pidb.storage.blobstorage.Storage
+import cn.pidb.engine.storage.Storage
 trait FailureProcess {}
 trait NotInParallel extends FailureProcess {
 

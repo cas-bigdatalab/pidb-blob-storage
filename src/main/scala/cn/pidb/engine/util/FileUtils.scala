@@ -1,9 +1,9 @@
-package cn.pidb.storage.util
+package cn.pidb.engine.util
 
 import java.io.{File, FileInputStream, InputStream}
 
 import cn.pidb.blob._
-import cn.pidb.storage.buffer.exception.FilePathIsNotDirectoryException
+import cn.pidb.engine.buffer.exception.FilePathIsNotDirectoryException
 import cn.pidb.util.StreamUtils._
 
 import scala.collection.mutable
