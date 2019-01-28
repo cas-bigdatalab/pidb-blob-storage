@@ -1,9 +1,9 @@
-package cn.pidb.engine.util
+package cn.pidb.storage.util
 
 import java.io.{File, FileInputStream, InputStream}
 
-import cn.pidb.blob.{Blob, BlobId, InputStreamSource, MimeType}
-import cn.pidb.engine.refactor.buffer.exception.FilePathIsNotDirectoryException
+import cn.pidb.blob._
+import cn.pidb.storage.buffer.exception.FilePathIsNotDirectoryException
 import cn.pidb.util.StreamUtils._
 
 import scala.collection.mutable
@@ -15,9 +15,9 @@ object FileUtils {
     new File(blobDir, s"${idname.substring(32, 36)}/$idname")
   }
 
-  def readFromBlobFile(blobFile: File): (BlobId, Blob) = {
+  def readFromBlobFile(blobFile: File, bidFac : BlobIdFactory): (BlobId, Blob) = {
     val fis = new FileInputStream(blobFile)
-    val blobId = BlobId.fromLongArray(fis.readLong(), fis.readLong())
+    val blobId = bidFac.readFromStream(fis)
     val mimeType = MimeType.fromCode(fis.readLong())
     val length = fis.readLong()
     fis.close()
